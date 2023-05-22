@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #333;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; 
+}
+
+.container{
+    background-color: #fff;
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+ .container ul{
+    display: flex;
+    width: 350px;
+    position: relative;
+}
+
+.container ul li{
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    list-style: none;
+} 
+
+.container ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    color: #333;
+    font-size: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.container ul li.active a .icon{
+    transform: translateY(-35px);
+}
+
+.container ul li a .text{
+    position: absolute;
+    color: #333;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3s;
+    font-weight: 400;
+}
+
+.container ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator{
+    position: absolute;
+    top: -50%;
+    background: #29fd53;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 6px solid #333;
+    transition: 0.3s;
+}
+
+.indicator::before{
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 35px;
+    box-shadow: 1px -10px 0 0 #333;
+}
+
+.indicator::after{
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-top-left-radius: 35px;
+    box-shadow: -1px -10px 0 0 #333;
+}
+
+.container ul li.active:nth-child(1) ~ .indicator{
+    transform: translateX(calc(70px * 0));
+}
+
+.container ul li.active:nth-child(2) ~ .indicator{
+    transform: translateX(calc(70px * 1));
+}
+
+.container ul li.active:nth-child(3) ~ .indicator{
+    transform: translateX(calc(70px * 2));
+}
+
+.container ul li.active:nth-child(4) ~ .indicator{
+    transform: translateX(calc(70px * 3));
+}
+
+.container ul li.active:nth-child(5) ~ .indicator{
+    transform: translateX(calc(70px * 4));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
